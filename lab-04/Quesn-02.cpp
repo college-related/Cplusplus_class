@@ -3,25 +3,26 @@ using namespace std;
 
 class area
 {
-	int length;
+	int length, breadth;
 	
 		public:
-			area(int l){//Parametarized constructor
+			area(int l, int b){//Parametarized constructor
 				length = l;	
+				breadth = b;
 			}	
 			void printArea(){
-				cout << "Area = " << length * length;
+				cout << "Area = " << length * breadth;
 			}
 };
 
 main()
 {
-	int a;
+	int a, b;
 	
-		cout << "Enter a num:";
-		cin >> a;
+		cout << "Enter length and breadth:" << endl;
+		cin >> a >> b;
 		
-	area A1(a);
+	area A1(a, b);
 	
 		A1.printArea();
 }
