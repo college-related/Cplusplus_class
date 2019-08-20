@@ -6,7 +6,7 @@ class area
 	int length;
 	
 		public:
-			area(){
+			area(){//default constructor
 				length = 0;	
 			}	
 			void printArea(){
