@@ -9,7 +9,7 @@ class copy_const
 				a = n1;
 				b = n2;
 			}
-			copy_const(const copy_const &ob1){
+			copy_const(copy_const &ob1){
 				a = ob1.a;
 				b = ob1.b;
 			}

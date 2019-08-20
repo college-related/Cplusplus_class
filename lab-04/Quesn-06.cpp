@@ -3,24 +3,25 @@ using namespace std;
 
 class const_overload
 {
-	int a, b, c;
+	int a, b;
 	
 		public:
-			const_overload(int n1){
-				a = n1;
+			const_overload(){
+				a = 0;
+				b = 0;
 			}
-			const_overload(int n2, int n3){
+			const_overload(int n1, int n2){
+				a = n1;
 				b = n2;
-				c = n3;
 			}	
 			void dis(){
-				cout << "Sum = " << a + b + c;
+				cout << "Sum = " << a + b;
 			}
 };
 
 main()
 {
-	const_overload ob1(1), ob1(2, 3);
+	const_overload ob1, ob2(10, 5);
 	
-		ob1.dis();
+		ob2.dis();
 }
