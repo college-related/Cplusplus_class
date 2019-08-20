@@ -3,17 +3,15 @@ using namespace std;
 
 class area
 {
-	int length;
+	int length, breadth;
 	
 		public:
 			area(){//default constructor
-				length = 0;	
+				length = 0;
+				breadth = 0;	
 			}	
 			void printArea(){
-				cout << "Enter a length: ";
-				cin >> length;
-				
-				cout << "Area = " << length * length;
+				cout << "Area = " << length * breadth;
 			}
 };
 
