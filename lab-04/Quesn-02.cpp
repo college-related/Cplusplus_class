@@ -6,7 +6,7 @@ class area
 	int length;
 	
 		public:
-			area(int l){
+			area(int l){//Parametarized constructor
 				length = l;	
 			}	
 			void printArea(){
@@ -16,7 +16,12 @@ class area
 
 main()
 {
-	area A1(12);
+	int a;
+	
+		cout << "Enter a num:";
+		cin >> a;
+		
+	area A1(a);
 	
 		A1.printArea();
 }
