@@ -6,7 +6,7 @@ class student
 	protected:
 		int roll_no;
 	public:
-		student(int r1)
+		void setRoll(int r1)
 		{
 			roll_no = r1;
 		}
@@ -21,10 +21,11 @@ class Theory: public student
 	protected:
 		int physics_th, science_th;
 	public:
-		Theory(int m1, int m2, int r):student(r)
+		void setTheoryMarks(int m1, int m2, int r)
 		{
 			physics_th = m1;
 			science_th = m2;
+			setRoll(r);
 		}
 		void disTheory_marks()
 		{
@@ -38,10 +39,11 @@ class Practical: public student
 	protected:
 		int physics_pr, science_pr;
 	public:
-		Practical(int m1, int m2, int r):student(r)
+		void setPracticalMarks(int m1, int m2, int r)
 		{
 			physics_pr = m1;
 			science_pr = m2;
+			setRoll(r);
 		}
 		void disPractical_marks()
 		{
@@ -50,17 +52,16 @@ class Practical: public student
 		}
 };
 
-class Result:virtual public Theory, virtual public Practical
+class Result:public Theory, public Practical
 {
 	protected:
 		int total;
 		
 	public:
-		Result(int m1, int m2, int m3, int m4,int r):Practical(m4,m3,r),Theory(m1,m2,r){}
 		void disResult()
 		{
 			total = physics_th + physics_pr + science_th + science_pr;
-			disRoll();
+			Theory::disRoll();
 			disTheory_marks();
 			disPractical_marks();
 			cout << "Total mark is " << total;
@@ -70,6 +71,8 @@ class Result:virtual public Theory, virtual public Practical
 
 main()
 {
-	Result R(60,70,40,50,24);
+	Result R;
+		R.setTheoryMarks(60, 70, 12);
+		R.setPracticalMarks(40,30,12);
 		R.disResult();
 }
