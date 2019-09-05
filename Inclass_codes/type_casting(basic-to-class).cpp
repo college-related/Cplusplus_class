@@ -21,7 +21,8 @@ main()
 	int duration;
 		cout << "Enter time in mins: ";
 		cin >> duration;
-		
-	Time t1 = duration;
+	
+//	here the integer duration is converted to the class type	
+	Time t1=duration;
 		t1.dis();
 }
